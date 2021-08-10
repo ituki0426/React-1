@@ -2,3 +2,5 @@ axiosとは
 ブラウザやnode.jsで動くPromiseベースのHTTPクライアントである。
 axiosの導入
 $ npm install axios --save
+axiosはフロントエンドとバックエンドの両方で用いられる。
+つまり、Reactと組み合わせて用いることが出来る。
