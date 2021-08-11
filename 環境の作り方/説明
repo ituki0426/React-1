@@ -1,1 +1,16 @@
-
+作る環境
+・react
+・express
+・lint
+・test(mocha)
+・configuration
+・logging
+packageの導入
+・webpack
+$ npm i -D webpack-cli webpack webpack-dev-server html-webpack-plugin
+webpack-dev-server：HMRやProxyを提供する開発用サーバー
+html-webpack-plugin：distされたscriptをhtmlに埋め込んで出力する
+・babel
+$ npm i -D babel-core babel-loader@7 babel-preset-env babel-preset-react  
+・React
+$ npm i -S react react-dom
