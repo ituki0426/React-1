@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+  </head>
+  <body>
+    <input type="checkbox" id="check1" checked/>サインイン
+	  <input type="checkbox" id="check2" />ログアウト
+	<script>
+		window.onload = function(){
+			on_event1();
+			console.log("1 is not");
+		}
+		const check1 = document.getElementById("check1");
+		const check2 = document.getElementById("check2");
+		function myHandle(e){
+			e.preventDefault();
+		}
+		function on_event1(){
+			document.getElementById("check1").addEventListener("click",myHandle,false);
+   /*1ボタンの無効化*/
+		}
+		function off_event1(){
+			document.getElementById("check1").removeEventListener("click",myHandle,false);
+   /*1ボタンの有効化*/
+		}
+		function on_event2(){
+			document.getElementById("check2").addEventListener("click",myHandle,false);
+   /*2ボタンの無効化*/
+		}
+		function off_event2(){
+			document.getElementById("check2").removeEventListener("click",myHandle,false);
+   /*2ボタンの有効化*/
+		}
+		check1.addEventListener("click", function (e) {
+			const info1 = document.querySelector("#check1");
+			const checked1 = info1.checked;
+			const info2 = document.querySelector("#check2");
+			const checked2 = info2.checked;
+			if(checked2 == true){
+				off_event2();
+				document.getElementById("check2").checked = false;
+        on_event1();
+        /*2ボタンのチェックを外している*/
+			}
+			
+		});
+		check2.addEventListener("click",function(e){
+			const info2 = document.querySelector("#check2");
+			const checked2 = info2.checked;
+			off_event1();
+			document.getElementById("check1").checked = false;
+			on_event2();
+		});	
+	  </script>
+    <div id="root"></div><!-- ここにコンポーネントをマウント -->
+  </body>
+</html>
 
